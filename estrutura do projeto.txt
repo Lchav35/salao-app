@@ -1,0 +1,21 @@
+Aqui está o esqueleto básico do projeto com React + Vite + Tailwind + Supabase:
+
+va-beauty-studio/
+├── public/
+│   └── index.html
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── pages/
+│   │   ├── Login.tsx
+│   │   └── Index.tsx
+│   ├── routes/
+│   │   └── AppRoutes.tsx
+│   ├── lib/
+│   │   └── supabaseClient.ts
+│   ├── App.tsx
+│   └── main.tsx
+├── tailwind.config.js
+├── postcss.config.js
+├── tsconfig.json
+└── package.json
