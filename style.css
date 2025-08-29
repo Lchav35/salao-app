@@ -1,11 +1,17 @@
-body {
+/* Reset básico */
+* {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
   background-color: #fff;
   color: #111;
 }
 
-/* Menu fixo elegante */
+/* Menu fixo no topo */
 .menu-superior {
   position: fixed;
   top: 0;
@@ -28,8 +34,6 @@ body {
   display: flex;
   gap: 30px;
   list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 .menu-superior li a {
