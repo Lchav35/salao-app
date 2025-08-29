@@ -3,48 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cadastro de Cliente | VA Beauty Studio</title>
+  <title>Cadastro - VA Beauty Studio</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <img src="assets/logo-va.png" alt="Logo VA Beauty Studio" class="logo" />
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="cadastro.html" class="active">Cadastro</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main class="cadastro">
-    <h1>Cadastro de Cliente</h1>
-    <form id="cadastroForm">
-      <label for="nome">Nome completo:</label>
-      <input type="text" id="nome" name="nome" required />
-
-      <label for="email">E-mail:</label>
-      <input type="email" id="email" name="email" required />
-
-      <label for="telefone">Telefone:</label>
-      <input type="tel" id="telefone" name="telefone" required />
-
-      <label for="servico">Serviço desejado:</label>
-      <select id="servico" name="servico">
-        <option value="corte">Corte de cabelo</option>
-        <option value="coloracao">Coloração</option>
-        <option value="maquiagem">Maquiagem</option>
-        <option value="sobrancelha">Design de sobrancelha</option>
-      </select>
-
-      <button type="submit">Cadastrar</button>
-    </form>
+  <main class="cadastro-container">
+    <h1>Cadastre-se com:</h1>
+    <button onclick="loginWithProvider('google')">Google</button>
+    <button onclick="loginWithProvider('facebook')">Facebook</button>
+    <button onclick="loginWithProvider('apple')">Apple</button>
   </main>
 
-  <footer>
-    <p>&copy; 2025 VA Beauty Studio</p>
-  </footer>
+  <script>
+    // Substitua com suas credenciais do Supabase
+    const supabase = supabase.createClient(
+      'https://SEU-PROJETO.supabase.co',
+      'SEU_PUBLIC_ANON_KEY'
+    );
 
-  <script src="script.js"></script>
+    function loginWithProvider(provider) {
+      supabase.auth.signInWithOAuth({
+        provider: provider,
+        options: {
+          redirectTo: window.location.origin + '/perfil.html' // ou qualquer página pós-login
+        }
+      });
+    }
+  </script>
 </body>
 </html>
